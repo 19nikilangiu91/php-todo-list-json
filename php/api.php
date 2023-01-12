@@ -9,14 +9,7 @@ header("Access-Controll-Allow-Headers: X-Requested-With");
 
 header('Content-Type: application/json');
 
-// $value = $_GET['third'];
+$jsonTodolist = file_get_contents('todo.json', true);
+$todoList = json_decode($jsonTodolist);
 
-$testObj = [
-    [
-        "first" => "Hello world",
-        "second" => "Hello to everyone",
-        // "third" => $value
-    ]
-];
-
-echo json_encode($testObj);
+echo json_encode($todoList);
