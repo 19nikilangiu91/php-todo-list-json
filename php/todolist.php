@@ -21,6 +21,7 @@ $todoList = [
         "text" => "PHP",
         "completed" => true
     ],
+
     [
         "text" => "Laravel",
         "completed" => false
@@ -42,7 +43,8 @@ $todoList = json_decode($jsonTodolist);
 
 // Aggiungiamo un elemento all'interno di "$todoList".
 $todoList[] = [
-    "text" => "Prova",
+
+    "text" => "Ciao",
     "completed" => false
 ];
 
