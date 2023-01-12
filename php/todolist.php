@@ -31,7 +31,7 @@ $todoList = [
 $jsonTodolist = json_encode($todoList);
 
 // lo inseriamo all'interno del file 'todo.json'.
-$res = file_put_contents('todo.json', $jsonTodolist);
+file_put_contents('todo.json', $jsonTodolist);
 
 // Dichiaro la variabile "$jsonTodolist" richiamando la funzione "file_get_contents" che mi rilegge il contenuto di un file e ce lo restituisce come stringa.
 $jsonTodolist = file_get_contents('todo.json', true);
@@ -46,10 +46,13 @@ $todoList[] = [
     "completed" => false
 ];
 
-// Rigeneriamo il nostro "$jsonTodolist".
+// Ricodifichiamo il nostro "$jsonTodolist".
 $jsonTodolist = json_encode($todoList);
 
 // e lo inseriamo all'interno del file 'todo.json'.
-$res = file_put_contents('todo.json', $jsonTodolist);
+file_put_contents('todo.json', $jsonTodolist);
 
-// var_dump($todoList);
+
+$jsonTodolist = file_get_contents('todo.json', true);
+$todoList = json_decode($jsonTodolist);
+var_dump($todoList);
