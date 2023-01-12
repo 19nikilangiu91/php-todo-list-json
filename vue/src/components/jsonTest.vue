@@ -9,7 +9,13 @@ const Api_url = "http://localhost:8888/api.php";
 export default {
   name: "jsonTest",
   mounted() {
-    axios.get(Api_url)
+
+    const params = {
+      params: {
+        'third': 'Hello to you'
+      }
+    };
+    axios.get(Api_url, params)
       .then(res => {
         const data = res.data;
         console.log(data);
