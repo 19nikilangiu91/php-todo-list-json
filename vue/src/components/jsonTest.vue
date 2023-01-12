@@ -4,7 +4,7 @@ import axios from 'axios';
 
 // Nello svolgere l’esercizio seguite un approccio graduale. Prima assicuratevi che la comunicazione tra "front-end" e "back-end" avvenga correttamente con il passaggio di parametri.
 // Creo una costante per la "Api_url".
-const Api_url = "http://localhost:8888/api.php";
+const Api_url = "http://localhost:8888/";
 
 export default {
   name: "jsonTest",
@@ -25,23 +25,31 @@ export default {
 
       e.preventDefault();
 
-      console.log(this.newTodo);
+      const params = {
+        params: {
+          'newTodo': this.newTodo
+        }
+      };
 
+      axios.get(Api_url + "api-inserisci-todo.php", params)
+        .then(() => {
+
+          this.getAllData();
+
+        })
+    },
+    getAllData() {
+      axios.get(Api_url + "api.php")
+        .then(res => {
+          const data = res.data;
+
+          this.todoList = data;
+        })
     }
+
   },
   mounted() {
-
-    const params = {
-      params: {
-        'third': 'Hello to you'
-      }
-    };
-    axios.get(Api_url, params)
-      .then(res => {
-        const data = res.data;
-
-        this.todoList = data;
-      })
+    this.getAllData();
   }
 }
 
