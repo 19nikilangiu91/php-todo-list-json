@@ -1,6 +1,6 @@
 <?php
 
-// Nello svolgere l’esercizio seguite un approccio graduale. Prima assicuratevi che la comunicazione tra "front-end" e "back-end" avvenga correttamente con il passaggio di parametri.
+// 4) Nello svolgere l’esercizio seguite un approccio graduale. Prima assicuratevi che la comunicazione tra "front-end" e "back-end" avvenga correttamente con il passaggio di parametri.
 
 // Aggiungo queste due righe nel php per evitare l'errore di CORS Policy!.
 //---------------------------------- Inserisco l'url della parte "front-end".
